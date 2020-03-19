@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b6e60ab7-9126-4d09-a755-13e471a183bc" name="Default Changelist" comment="">
+    <list default="true" id="b6e60ab7-9126-4d09-a755-13e471a183bc" name="Default Changelist" comment="add readme">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/readme.adoc" afterDir="false" />
     </list>
@@ -18,6 +18,11 @@
     <option name="delegatedBuild" value="true" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
@@ -106,7 +111,7 @@
       <option name="presentableId" value="Default" />
       <updated>1584650755500</updated>
       <workItem from="1584650757321" duration="405000" />
-      <workItem from="1584651807371" duration="3912000" />
+      <workItem from="1584651807371" duration="4162000" />
     </task>
     <task id="LOCAL-00001" summary="add readme">
       <created>1584652421289</created>
@@ -115,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584652421289</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add readme">
+      <created>1584656464032</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1584656464032</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,18 +138,18 @@
     <option name="LAST_COMMIT_MESSAGE" value="add readme" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="804" y="222" key="CommitChangelistDialog2" timestamp="1584652421126">
+    <state x="804" y="222" key="CommitChangelistDialog2" timestamp="1584656483753">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state x="804" y="222" key="CommitChangelistDialog2/0.23.2560.1417@0.23.2560.1417" timestamp="1584652421126" />
+    <state x="804" y="222" key="CommitChangelistDialog2/0.23.2560.1417@0.23.2560.1417" timestamp="1584656483753" />
     <state width="625" height="500" key="SwitcherDM" timestamp="1584652987618">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state width="625" height="500" key="SwitcherDM/0.23.2560.1417@0.23.2560.1417" timestamp="1584652987618" />
-    <state x="780" y="410" key="Vcs.Push.Dialog.v2" timestamp="1584652426064">
+    <state x="780" y="410" key="Vcs.Push.Dialog.v2" timestamp="1584656513918">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state x="780" y="410" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1584652426064" />
+    <state x="780" y="410" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1584656513918" />
     <state x="1501" y="341" width="838" height="1032" key="search.everywhere.popup" timestamp="1584651210026">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>

@@ -1,3 +1,6 @@
+ifdef::env-github[]
+:imagesdir: https://github.com/ojhughes/spring-live-jsonnet/raw/master
+endif::[]
 = Jsonnet: Data driven configuration language
 image::jsonnet-overview.png[]
 image::springlive.png[]
