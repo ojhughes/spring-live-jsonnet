@@ -1,21 +1,24 @@
-== Kubernetes Local Development Workflow
+= Jsonnet: Data driven configuration language
+image::jsonnet-overview.png[]
+image::springlive.png[]
 
-Create manifest by implementing curated Jsonnet classes Profiles Tiltfile Helm Config CertManager?
+== Talk Outline
+* Jsonnet overview
+* Advantage of string templating
+* Simple example
 
-=== Slide 1: Certified k8s developer
+== Useful Links
+* https://twitter.com/olliehughes82[@olliehughes82]
+* https://github.com/databricks/jsonnet-style-guide[Databricks Jsonnet Style Guide]
+* https://github.com/grafana/jsonnet-libs[Grafana Jsonnet tools and mixins]
 
-*dog typing on keyboard or washing hair*
 
-* Skaffold simple
-* Might not scale for bigger teams
-* Alternative approach
+== Tools
+* [Jsonnet]
+* [Jsonnet Bundler]
+* [yq]
 
-Thanks Alberto, as you can see getting an app up & running on k8s is simple especially when you let tools such as Skaffold do most of the hard work.
-For many teams, Skaffold & Kustomize is a great choice as it offers an opinionated workflow and a set of guide rails that should that for will be suitable for many teams, especially those starting out with k8s.
-
-I want to demonstrate an alternative that has been effective for me when working on larger teams dealing with larger deployments on Kubernetes
-
-=== Slide 2: Jsonnet: Data driven configuration language
+== Jsonnet Overview
 
 * Superset of JSON - cloud resources
 * Reuse
@@ -28,8 +31,8 @@ I want to demonstrate an alternative that has been effective for me when working
 
 Superset of JSON designed for describing cloud resources
 
-✅ Data driven templates, not string based.
-Data is smart, text is dumb
+== Pros & Cons
+✅ Data is smart, text is dumb
 
 ✅ Reuse curated "data models"
 
@@ -49,14 +52,20 @@ Data is smart, text is dumb
 
 🛑 To quote my colleague "Ugh... It's Icky"
 
-=== Demo 1: Jsonnet Primer
+== Alternative approaches
+* Plain old, duplicated, hand cranked YAML
+* Kustomize
+
+== Simple example
 
 Sharing configuration::
 * Link to github on how to install tools and follow steps
 * Create file `common-data.jsonnet.TEMPLATE`
 * Implement simple JSON structure with hardcoded data
 
+
 [source]
+.build-meta.json
 ----
 {
   "projectName": "spring-microservice"
@@ -88,9 +97,3 @@ Sharing configuration::
 * Parameterize `prefix` showing merge behaviour - it will fail
   if we don't provide `releaseNumber` which isn't desired.
 * Show how using `+::`
-
-
-Ollie additions
-- Helm
-- Labels
-- Kustomize config map / curated overlay
