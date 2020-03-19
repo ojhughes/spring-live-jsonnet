@@ -1,9 +1,7 @@
-ifdef::env-github[]
-:imagesdir: https://github.com/ojhughes/spring-live-jsonnet/raw/master
-endif::[]
-= Jsonnet: Data driven configuration language
-image::https://github.com/ojhughes/spring-live-jsonnet/raw/master/jsonnet-overview.png[]
-image::https://github.com/ojhughes/spring-live-jsonnet/raw/master/springlive.png[]
+# Jsonnet: Data driven configuration language
+![](springlive.png)
+
+![](jsonnet-overview.png)
 
 == Talk Outline
 * Jsonnet overview
@@ -14,7 +12,6 @@ image::https://github.com/ojhughes/spring-live-jsonnet/raw/master/springlive.png
 * https://twitter.com/olliehughes82[@olliehughes82]
 * https://github.com/databricks/jsonnet-style-guide[Databricks Jsonnet Style Guide]
 * https://github.com/grafana/jsonnet-libs[Grafana Jsonnet tools and mixins]
-
 
 == Tools
 * [Jsonnet]

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b6e60ab7-9126-4d09-a755-13e471a183bc" name="Default Changelist" comment="add readme">
+    <list default="true" id="b6e60ab7-9126-4d09-a755-13e471a183bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/readme.adoc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +110,7 @@
       <option name="presentableId" value="Default" />
       <updated>1584650755500</updated>
       <workItem from="1584650757321" duration="405000" />
-      <workItem from="1584651807371" duration="4162000" />
+      <workItem from="1584651807371" duration="4412000" />
     </task>
     <task id="LOCAL-00001" summary="add readme">
       <created>1584652421289</created>
@@ -127,7 +126,21 @@
       <option name="project" value="LOCAL" />
       <updated>1584656464032</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="wip">
+      <created>1584656727149</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1584656727149</updated>
+    </task>
+    <task id="LOCAL-00004" summary="^">
+      <created>1584656918025</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1584656918025</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,21 +148,23 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="add readme" />
+    <MESSAGE value="wip" />
+    <MESSAGE value="^" />
+    <option name="LAST_COMMIT_MESSAGE" value="^" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="804" y="222" key="CommitChangelistDialog2" timestamp="1584656727027">
+    <state x="804" y="222" key="CommitChangelistDialog2" timestamp="1584656917900">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state x="804" y="222" key="CommitChangelistDialog2/0.23.2560.1417@0.23.2560.1417" timestamp="1584656727027" />
+    <state x="804" y="222" key="CommitChangelistDialog2/0.23.2560.1417@0.23.2560.1417" timestamp="1584656917900" />
     <state width="625" height="500" key="SwitcherDM" timestamp="1584652987618">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state width="625" height="500" key="SwitcherDM/0.23.2560.1417@0.23.2560.1417" timestamp="1584652987618" />
-    <state x="780" y="410" key="Vcs.Push.Dialog.v2" timestamp="1584656731255">
+    <state x="780" y="410" key="Vcs.Push.Dialog.v2" timestamp="1584656920948">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state x="780" y="410" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1584656731255" />
+    <state x="780" y="410" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1584656920948" />
     <state x="1501" y="341" width="838" height="1032" key="search.everywhere.popup" timestamp="1584651210026">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
