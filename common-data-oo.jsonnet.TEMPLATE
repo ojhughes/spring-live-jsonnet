@@ -1,0 +1,47 @@
+//local newCommonData(buildNumber, commitSha) = {
+
+local newAppMetadata(
+  projectName,
+  commitSha,
+  minorVersion,
+  patchVersion,
+  majorVersion = 1,
+  buildPrefix = "build",
+) =
+{
+  local buildInfo = {
+    //Commit SHA should be hexidecimal
+    assert std.isNumber(std.parseHex(commitSha)),
+    prefix: "build",
+    commitSha: commitSha,
+    releaseNumber: "%s-%s" % [std.asciiUpper(buildPrefix), buildSha],
+  },
+
+  local artifactSuffixes = ["src.jar", "javadoc.jar", "bin.jar", "tar.gz"],
+  local buildPrefix = buildInfo.prefix,
+  local buildSha = buildInfo.commitSha,
+  local formatArtifactName(suffix) =
+    std.format("%s-%s.%s", [projectName, $.appMeta.versionInfo.humanized, suffix]),
+  local formatVersionNumber(versionInfo, releaseNumber) =
+    std.format("%d.%d.%d-%s", [versionInfo.major, versionInfo.minor, versionInfo.patch, releaseNumber]),
+
+  appMeta: {
+    projectName: projectName,
+    buildInfo: buildInfo,
+    versionInfo: {
+      major: 1,
+      minor: 3,
+      patch: 2,
+      humanized: formatVersionNumber(self, $.appMeta.buildInfo.releaseNumber),
+    },
+
+    artifacts: [
+      formatArtifactName(suffix)
+      for suffix in artifactSuffixes]
+  }
+};
+
+{
+  newAppMetadata:: newAppMetadata
+}
+

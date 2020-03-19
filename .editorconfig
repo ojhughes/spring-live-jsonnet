@@ -1,0 +1,6 @@
+root = true
+[{*.jsonnet,*.libsonnet,*.jsonnet.TEMPLATE}]
+indent_size = 2
+indent_style = space
+ij_any_align_multiline_array_initializer_expression = true
+ij_any_space_after_comma = true

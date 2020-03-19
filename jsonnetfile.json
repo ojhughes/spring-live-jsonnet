@@ -1,0 +1,24 @@
+{
+  "dependencies": [
+    {
+      "source": {
+        "git": {
+          "remote": "https://github.com/bitnami-labs/kube-libsonnet",
+          "subdir": ""
+        }
+      },
+      "version": "master"
+    },
+    {
+      "source": {
+        "git": {
+          "remote": "https://github.com/bitnami/kubecfg",
+          "subdir": "lib"
+        }
+      },
+      "version": "master",
+      "name": "kubecfg"
+    }
+  ],
+  "legacyImports": true
+}

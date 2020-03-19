@@ -1,0 +1,96 @@
+== Kubernetes Local Development Workflow
+
+Create manifest by implementing curated Jsonnet classes Profiles Tiltfile Helm Config CertManager?
+
+=== Slide 1: Certified k8s developer
+
+*dog typing on keyboard or washing hair*
+
+* Skaffold simple
+* Might not scale for bigger teams
+* Alternative approach
+
+Thanks Alberto, as you can see getting an app up & running on k8s is simple especially when you let tools such as Skaffold do most of the hard work.
+For many teams, Skaffold & Kustomize is a great choice as it offers an opinionated workflow and a set of guide rails that should that for will be suitable for many teams, especially those starting out with k8s.
+
+I want to demonstrate an alternative that has been effective for me when working on larger teams dealing with larger deployments on Kubernetes
+
+=== Slide 2: Jsonnet: Data driven configuration language
+
+* Superset of JSON - cloud resources
+* Reuse
+* Icky
+* Merge
+* Transform
+* Function
+* Conditionals
+* Std lib
+
+Superset of JSON designed for describing cloud resources
+
+✅ Data driven templates, not string based.
+Data is smart, text is dumb
+
+✅ Reuse curated "data models"
+
+✅ More machine readable / writable than YAML (because it's data not text)
+
+✅ Excellent at merging or overriding deeply nested data structures
+
+✅ Create "native" functions easily in Go
+
+✅ JVM bindings (integrate with your build easily)
+
+🛑 Can be a hard sell to colleagues
+
+🛑 It has Json in the name
+
+🛑 Looks a bit like the spawn of JSON & Python
+
+🛑 To quote my colleague "Ugh... It's Icky"
+
+=== Demo 1: Jsonnet Primer
+
+Sharing configuration::
+* Link to github on how to install tools and follow steps
+* Create file `common-data.jsonnet.TEMPLATE`
+* Implement simple JSON structure with hardcoded data
+
+[source]
+----
+{
+  "projectName": "spring-microservice"
+  "appMeta": {
+    "buildInfo": {
+      "commitSha": "f6b4cd",
+      "prefix": "SNAPSHOT",
+      "releaseNumber": "SNAPSHOT-f6b4cd"
+    },
+    "versionInfo": {
+      "humanized": "1.3.2-SNAPSHOT-f6b4cd",
+      "major": 1,
+      "minor": 3,
+      "patch": 2
+    },
+    "artifacts": [
+      "spring-microservice-1.3.2-SNAPSHOT-f6b4cd.src.jar",
+      "spring-microservice-1.3.2-SNAPSHOT-f6b4cd.javadoc.jar",
+      "spring-microservice-1.3.2-SNAPSHOT-f6b4cd.bin.jar",
+      "spring-microservice-1.3.2-SNAPSHOT-f6b4cd.tar.gz"
+    ],
+  }
+}
+----
+
+* Parameterize `projectName`
+* Parameterize `commitSha` using a simple variable reference
+* Reference `buildInfo` properties from `versionInfo.humanize`
+* Parameterize `prefix` showing merge behaviour - it will fail
+  if we don't provide `releaseNumber` which isn't desired.
+* Show how using `+::`
+
+
+Ollie additions
+- Helm
+- Labels
+- Kustomize config map / curated overlay
