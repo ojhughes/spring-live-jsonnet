@@ -18,6 +18,16 @@
       },
       "version": "master",
       "name": "kubecfg"
+    },
+    {
+      "source": {
+        "git": {
+          "remote": "https://github.com/ojhughes/jsonnet-style-guide",
+          "subdir": ""
+        }
+      },
+      "version": "master",
+      "name": "service-deployment"
     }
   ],
   "legacyImports": true

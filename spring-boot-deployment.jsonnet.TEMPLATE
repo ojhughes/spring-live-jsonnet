@@ -1,9 +1,0 @@
-local kube = import "kube.jsonnet.TEMPLATE";
-
-local newSpringBootDeploymentAndService(appName, version) = {
-
-};
-
-{
-    newSpringBootDeploymentAndService:: newSpringBootDeploymentAndService,
-}

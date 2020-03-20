@@ -2,7 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6e60ab7-9126-4d09-a755-13e471a183bc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/k8s-deployment.jsonnet" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/output-formats-properties.jsonnet" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/output-formats-string.jsonnet" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-data-oo.jsonnet.TEMPLATE" beforeDir="false" afterPath="$PROJECT_DIR$/build-meta.jsonnet.TEMPLATE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-data.jsonnet.TEMPLATE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jsonnetfile.json" beforeDir="false" afterPath="$PROJECT_DIR$/jsonnetfile.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kube.jsonnet.TEMPLATE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outline.md" beforeDir="false" afterPath="$PROJECT_DIR$/dev-data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reusable-yaml.jsonnet" beforeDir="false" afterPath="$PROJECT_DIR$/build-meta-myapp.jsonnet" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/service-deployment/examples/databricks/shard-v2/shard.jsonnet.TEMPLATE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/service-deployment/examples/databricks/shard-v2/shard.jsonnet.TEMPLATE" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,10 +60,10 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -110,7 +121,7 @@
       <option name="presentableId" value="Default" />
       <updated>1584650755500</updated>
       <workItem from="1584650757321" duration="405000" />
-      <workItem from="1584651807371" duration="4412000" />
+      <workItem from="1584651807371" duration="9290000" />
     </task>
     <task id="LOCAL-00001" summary="add readme">
       <created>1584652421289</created>
@@ -140,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584656918025</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="wip">
+      <created>1584657171723</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1584657171723</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,23 +166,23 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add readme" />
-    <MESSAGE value="wip" />
     <MESSAGE value="^" />
-    <option name="LAST_COMMIT_MESSAGE" value="^" />
+    <MESSAGE value="wip" />
+    <option name="LAST_COMMIT_MESSAGE" value="wip" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="804" y="222" key="CommitChangelistDialog2" timestamp="1584656917900">
+    <state x="804" y="222" key="CommitChangelistDialog2" timestamp="1584657171607">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state x="804" y="222" key="CommitChangelistDialog2/0.23.2560.1417@0.23.2560.1417" timestamp="1584656917900" />
-    <state width="625" height="500" key="SwitcherDM" timestamp="1584652987618">
+    <state x="804" y="222" key="CommitChangelistDialog2/0.23.2560.1417@0.23.2560.1417" timestamp="1584657171607" />
+    <state width="625" height="500" key="SwitcherDM" timestamp="1584663377395">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state width="625" height="500" key="SwitcherDM/0.23.2560.1417@0.23.2560.1417" timestamp="1584652987618" />
-    <state x="780" y="410" key="Vcs.Push.Dialog.v2" timestamp="1584656920948">
+    <state width="625" height="500" key="SwitcherDM/0.23.2560.1417@0.23.2560.1417" timestamp="1584663377395" />
+    <state x="780" y="410" key="Vcs.Push.Dialog.v2" timestamp="1584657178254">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state x="780" y="410" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1584656920948" />
+    <state x="780" y="410" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1584657178254" />
     <state x="1501" y="341" width="838" height="1032" key="search.everywhere.popup" timestamp="1584651210026">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>

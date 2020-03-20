@@ -3,24 +3,25 @@
 
 ![](jsonnet-overview.png)
 
-== Talk Outline
+## Talk Outline
 * Jsonnet overview
 * Advantage of string templating
 * Simple example
 
-== Useful Links
+## Useful Links
 * https://twitter.com/olliehughes82[@olliehughes82]
 * https://github.com/databricks/jsonnet-style-guide[Databricks Jsonnet Style Guide]
 * https://github.com/grafana/jsonnet-libs[Grafana Jsonnet tools and mixins]
 
-== Tools
-* [Jsonnet]
-* [Jsonnet Bundler]
-* [yq]
+## Tools
+* [Jsonnet](https://jsonnet.org/)
+* [Jsonnet Bundler](https://github.com/jsonnet-bundler/jsonnet-bundler)
+* [yq](https://mikefarah.gitbook.io/yq/)
+* [jq](https://stedolan.github.io/jq/)
+* [Bitnami Kubcfg](https://github.com/bitnami/kubecfg)
 
-== Jsonnet Overview
-
-* Superset of JSON - cloud resources
+## Jsonnet Overview
+* Superset of JSON
 * Reuse
 * Icky
 * Merge
@@ -31,7 +32,7 @@
 
 Superset of JSON designed for describing cloud resources
 
-== Pros & Cons
+## Pros & Cons
 ✅ Data is smart, text is dumb
 
 ✅ Reuse curated "data models"
@@ -52,11 +53,12 @@ Superset of JSON designed for describing cloud resources
 
 🛑 To quote my colleague "Ugh... It's Icky"
 
-== Alternative approaches
+## Alternative approaches
 * Plain old, duplicated, hand cranked YAML
 * Kustomize
+* Helm charts
 
-== Simple example
+## Simple example
 
 Sharing configuration::
 * Link to github on how to install tools and follow steps
@@ -64,11 +66,10 @@ Sharing configuration::
 * Implement simple JSON structure with hardcoded data
 
 
-[source]
-.build-meta.json
-----
+
+```json
 {
-  "projectName": "spring-microservice"
+  "projectName": "spring-microservice",
   "appMeta": {
     "buildInfo": {
       "commitSha": "f6b4cd",
@@ -86,11 +87,10 @@ Sharing configuration::
       "spring-microservice-1.3.2-SNAPSHOT-f6b4cd.javadoc.jar",
       "spring-microservice-1.3.2-SNAPSHOT-f6b4cd.bin.jar",
       "spring-microservice-1.3.2-SNAPSHOT-f6b4cd.tar.gz"
-    ],
+    ]
   }
 }
-----
-
+```
 * Parameterize `projectName`
 * Parameterize `commitSha` using a simple variable reference
 * Reference `buildInfo` properties from `versionInfo.humanize`
