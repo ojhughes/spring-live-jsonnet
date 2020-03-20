@@ -1,3 +1,0 @@
-[submodule "jsonnet-style-guide"]
-	path = jsonnet-style-guide
-	url = git://github.com/databricks/jsonnet-style-guide.git

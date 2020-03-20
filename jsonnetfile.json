@@ -22,7 +22,7 @@
     {
       "source": {
         "git": {
-          "remote": "https://github.com/ojhughes/jsonnet-style-guide",
+          "remote": "https://github.com/ojhughes/simplek8s-libsonnet",
           "subdir": ""
         }
       },
