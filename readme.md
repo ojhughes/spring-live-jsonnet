@@ -9,19 +9,16 @@
 * Simple example
 
 ## Useful Links
-* https://twitter.com/olliehughes82[@olliehughes82]
-* https://github.com/databricks/jsonnet-style-guide[Databricks Jsonnet Style Guide]
-* https://github.com/grafana/jsonnet-libs[Grafana Jsonnet tools and mixins]
+* [@olliehughes82](https://twitter.com/olliehughes82)
+* [Databricks Jsonnet Style Guide](https://github.com/databricks/jsonnet-style-guide)
+* [Grafana Jsonnet tools and mixins](https://github.com/grafana/jsonnet-libs)
 
-## Jsonnet Overview
+## Jsonnet features
 * Superset of JSON
-* Reuse
-* Icky
-* Merge
-* Transform
-* Function
-* Conditionals
-* Std lib
+* Reuse of data across config files
+* Merge data fragments into nested fields
+* Transform data output
+* [Std lib](https://jsonnet.org/ref/stdlib.html)
 
 ## Tools
 * [Jsonnet](https://jsonnet.org/)
@@ -29,6 +26,7 @@
 * [yq](https://mikefarah.gitbook.io/yq/)
 * [jq](https://stedolan.github.io/jq/)
 * [Bitnami Kubcfg](https://github.com/bitnami/kubecfg)
+* [Jsonnet Intellij Plugin](https://plugins.jetbrains.com/plugin/10852-jsonnet)
 
 Superset of JSON designed for describing cloud resources
 
@@ -60,11 +58,15 @@ Superset of JSON designed for describing cloud resources
 
 ## Output formats
 * Arbitary String
+`jsonnet -S output-formats-string.jsonnet`
 * Properties file
+`jsonnet -S output-formats-properties.jsonnet`
 * YAML
+`jsonnet -S output-formats-yaml.jsonnet`
 
 ## Simple example
 
+Let's say we want all teams to provide a `build-meta.json` with every release
 ```json
 {
   "projectName": "spring-microservice",
@@ -88,4 +90,90 @@ Superset of JSON designed for describing cloud resources
     ]
   }
 }
+```
+
+Each project implements this fragment
+
+```jsonnet
+local common = import "build-meta.jsonnet.TEMPLATE";
+local devData = import "dev-data.json";
+
+local myConfig = common.newAppMetadata(
+  projectName = devData.projectName,
+  commitSha = devData.commitSha,
+  minorVersion = devData.minorVersion,
+  patchVersion = devData.patchVersion,
+  buildPrefix = devData.buildPrefix
+);
+myConfig
+```
+Which renders the template  [build-meta.jsonnet.TEMPLATE](build-meta.jsonnet.TEMPLATE)
+by calling it's constructor with the desired values to populate the template
+
+This command will render the template
+`jsonnet build-meta-myapp.jsonnet` 
+
+## Generate a kubernetes deployment and service manifest
+
+Jsonnet Bundler allows curated Jsonnet libs to be installed from Github using a
+[jsonnetfile.json]([jsonnetfile.json]).
+
+Install the k8s dependency with command `jb install`
+
+We will use a Jsonnet library (.libsonnet extension) that provides helpers for building
+a simple k8s manifest: [service-deployment.libsonnet](https://github.com/ojhughes/jsonnet-style-guide/blob/master/service-deployment.libsonnet)
+ 
+The Jsonnet file for generating the manifest looks like this 
+```jsonnet
+local devData = import "dev-data.json";
+local serviceDeployment = import "vendor/service-deployment/service-deployment.libsonnet";
+serviceDeployment + {
+  serviceName:: devData.projectName,
+  dockerImage:: devData.projectName + ":" + devData.projectName,
+  serviceConf:: {
+    customerName: "foocorp",
+    database: "user-db.databricks.us-west-2.rds.amazonaws.com",
+  },
+}
+
+```
+
+To render the kubernetes manifest
+`jsonnet -J vendor k8s-manifest.jsonnet | yq --prettyPrint r -`
+
+the output should be 
+```yaml
+apiVersion: v1
+items:
+- kind: Service
+  metadata:
+    name: spring-microservice
+  spec:
+    selector:
+      serviceName: spring-microservice
+- kind: Deployment
+  metadata:
+    name: spring-microservice
+  spec:
+    replicas: 1
+    template:
+      metadata:
+        labels:
+          name: spring-microservice
+      spec:
+        containers:
+        - env:
+            name: SERVICE_CONF
+            value: |-
+              {
+                  "customerName": "foocorp",
+                  "database": "user-db.databricks.us-west-2.rds.amazonaws.com"
+              }
+          image: spring-microservice:spring-microservice
+          name: default
+          resources:
+            requests:
+              cpu: 500m
+              memory: 250Mi
+kind: List
 ```
