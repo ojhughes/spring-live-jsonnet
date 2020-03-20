@@ -107,6 +107,7 @@ app.buildPrefix=snapsho
 
 ### Properties file using list comprehension and reflection
 Lets get a bit fancy and DRY up our Java properties file format output using reflection and list comprehension
+
 **Command**
 ```
 jsonnet -S output-formats-properties-list-comprehension-and-reflection.jsonnet
@@ -189,7 +190,9 @@ Which renders the template  [build-meta.jsonnet.TEMPLATE](build-meta.jsonnet.TEM
 by calling it's constructor with the desired values to populate the template
 
 This command will render the template
-`jsonnet build-meta-myapp.jsonnet` 
+```
+jsonnet build-meta-myapp.jsonnet
+``` 
 
 And render the JSON output
 ```json
