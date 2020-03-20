@@ -103,6 +103,33 @@ app.minorVersion=3
 app.patchVersion=2
 app.buildPrefix=snapsho
 ```
+
+
+### Properties file using list comprehension and reflection
+Lets get a bit fancy and DRY up our Java properties file format output using reflection and list comprehension
+**Command**
+```
+jsonnet -S output-formats-properties-list-comprehension-and-reflection.jsonnet
+```
+
+**Input**
+```jsonnet
+local devData = import "dev-data.json";
+local properties = std.mapWithKey(function(k,v) std.format("app.%s=%s", [k, v]), devData);
+std.lines(
+  std.map(
+    function(jsonKey) properties[jsonKey],
+    std.objectFields(properties)))
+```
+
+**Output**
+```properties
+app.projectName=spring-microservice
+app.commitSha=f6b4cd
+app.minorVersion=3
+app.patchVersion=2
+app.buildPrefix=snapsho
+```
 ### YAML
 **Command**
 ```
@@ -205,13 +232,16 @@ local devData = import "dev-data.json";
 local serviceDeployment = import "vendor/service-deployment/service-deployment.libsonnet";
 serviceDeployment + {
   serviceName:: devData.projectName,
-  dockerImage:: devData.projectName + ":" + devData.projectName,
+  dockerImage:: devData.projectName + ":" + devData.commitSha,
   serviceConf:: {
-    customerName: "foocorp",
-    database: "user-db.databricks.us-west-2.rds.amazonaws.com",
+    envVarName:: "SPRING_APPLICATION_JSON",
+    spring: {
+      application: {
+        name: devData.projectName
+      }
+    }
   },
 }
-
 ```
 
 To render the kubernetes manifest
@@ -239,13 +269,16 @@ items:
       spec:
         containers:
         - env:
-            name: SERVICE_CONF
+            name: SPRING_APPLICATION_JSON
             value: |-
               {
-                  "customerName": "foocorp",
-                  "database": "user-db.databricks.us-west-2.rds.amazonaws.com"
+                  "spring": {
+                      "application": {
+                          "name": "spring-microservice"
+                      }
+                  }
               }
-          image: spring-microservice:spring-microservice
+          image: spring-microservice:f6b4cd
           name: default
           resources:
             requests:
