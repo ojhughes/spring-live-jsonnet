@@ -13,13 +13,6 @@
 * https://github.com/databricks/jsonnet-style-guide[Databricks Jsonnet Style Guide]
 * https://github.com/grafana/jsonnet-libs[Grafana Jsonnet tools and mixins]
 
-## Tools
-* [Jsonnet](https://jsonnet.org/)
-* [Jsonnet Bundler](https://github.com/jsonnet-bundler/jsonnet-bundler)
-* [yq](https://mikefarah.gitbook.io/yq/)
-* [jq](https://stedolan.github.io/jq/)
-* [Bitnami Kubcfg](https://github.com/bitnami/kubecfg)
-
 ## Jsonnet Overview
 * Superset of JSON
 * Reuse
@@ -29,6 +22,13 @@
 * Function
 * Conditionals
 * Std lib
+
+## Tools
+* [Jsonnet](https://jsonnet.org/)
+* [Jsonnet Bundler](https://github.com/jsonnet-bundler/jsonnet-bundler)
+* [yq](https://mikefarah.gitbook.io/yq/)
+* [jq](https://stedolan.github.io/jq/)
+* [Bitnami Kubcfg](https://github.com/bitnami/kubecfg)
 
 Superset of JSON designed for describing cloud resources
 
@@ -58,14 +58,12 @@ Superset of JSON designed for describing cloud resources
 * Kustomize
 * Helm charts
 
+## Output formats
+* Arbitary String
+* Properties file
+* YAML
+
 ## Simple example
-
-Sharing configuration::
-* Link to github on how to install tools and follow steps
-* Create file `common-data.jsonnet.TEMPLATE`
-* Implement simple JSON structure with hardcoded data
-
-
 
 ```json
 {
@@ -91,9 +89,3 @@ Sharing configuration::
   }
 }
 ```
-* Parameterize `projectName`
-* Parameterize `commitSha` using a simple variable reference
-* Reference `buildInfo` properties from `versionInfo.humanize`
-* Parameterize `prefix` showing merge behaviour - it will fail
-  if we don't provide `releaseNumber` which isn't desired.
-* Show how using `+::`
