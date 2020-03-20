@@ -5,7 +5,7 @@
 
 ## Talk Outline
 * Jsonnet overview
-* Advantage of string templating
+* Advantage of data templating over string templating
 * Simple example
 
 ## Useful Links
@@ -49,7 +49,7 @@ Superset of JSON designed for describing cloud resources
 
 🛑 Looks a bit like the spawn of JSON & Python
 
-🛑 To quote my colleague "Ugh... It's Icky"
+🛑 Ugh... It's Icky
 
 ## Alternative approaches
 * Plain old, duplicated, hand cranked YAML
@@ -57,16 +57,114 @@ Superset of JSON designed for describing cloud resources
 * Helm charts
 
 ## Output formats
-* Arbitary String
-`jsonnet -S output-formats-string.jsonnet`
-* Properties file
-`jsonnet -S output-formats-properties.jsonnet`
-* YAML
-`jsonnet -S output-formats-yaml.jsonnet`
+### Arbitary String
+
+**Command**
+```
+jsonnet -S output-formats-string.jsonnet
+```
+
+**Input**
+```jsonnet
+local devData = import "dev-data.json";
+std.format("just a string with a value embedded %s",devData.buildPrefix)
+```
+
+**Output**
+```
+just a string with a value embedded snapshot
+```
+
+### Properties file
+
+**Command**
+```
+jsonnet -S output-formats-properties.jsonnet
+```
+
+**Input**
+```jsonnet
+local devData = import "dev-data.json";
+local properties = [
+  std.format("app.projectName=%s", devData.projectName),
+  std.format("app.commitSha=%s", devData.commitSha),
+  std.format("app.minorVersion=%s", devData.minorVersion),
+  std.format("app.patchVersion=%s", devData.patchVersion),
+  std.format("app.buildPrefix=%s", devData.buildPrefix)
+];
+std.lines(properties)
+```
+
+**Output**
+```properties
+app.projectName=spring-microservice
+app.commitSha=f6b4cd
+app.minorVersion=3
+app.patchVersion=2
+app.buildPrefix=snapsho
+```
+### YAML
+**Command**
+```
+jsonnet -S output-formats-yaml.jsonnet
+```
+
+**Input**
+```jsonnet
+local devData = import "dev-data.json";
+
+local myData = devData + {
+  buildMeta: {
+    versions: [1,2,3]
+  }
+};
+std.manifestYamlDoc(myData)
+```
+
+**Output**
+```yaml
+"buildMeta":
+  "versions":
+  - 1
+  - 2
+  - 3
+"buildPrefix": "snapshot"
+"commitSha": "f6b4cd"
+"minorVersion": 3
+"patchVersion": 2
+"projectName": "spring-microservice"
+```
+🤷‍♂️ It's valid YAML but the quotes are annoying! I prefer to use JSON to render the JSON and use `yq` to convert to YAML
+
+
 
 ## Simple example
 
 Let's say we want all teams to provide a `build-meta.json` with every release
+
+
+Each project implements this fragment
+
+```jsonnet
+local common = import "build-meta.jsonnet.TEMPLATE";
+local devData = import "dev-data.json";
+
+local myConfig = common.newAppMetadata(
+  projectName = devData.projectName,
+  commitSha = devData.commitSha,
+  minorVersion = devData.minorVersion,
+  patchVersion = devData.patchVersion,
+  buildPrefix = devData.buildPrefix
+);
+myConfig
+```
+Which renders the template  [build-meta.jsonnet.TEMPLATE](build-meta.jsonnet.TEMPLATE)
+by calling it's constructor with the desired values to populate the template
+
+This command will render the template
+`jsonnet build-meta-myapp.jsonnet` 
+
+And render the JSON output
 ```json
 {
   "projectName": "spring-microservice",
@@ -91,32 +189,10 @@ Let's say we want all teams to provide a `build-meta.json` with every release
   }
 }
 ```
-
-Each project implements this fragment
-
-```jsonnet
-local common = import "build-meta.jsonnet.TEMPLATE";
-local devData = import "dev-data.json";
-
-local myConfig = common.newAppMetadata(
-  projectName = devData.projectName,
-  commitSha = devData.commitSha,
-  minorVersion = devData.minorVersion,
-  patchVersion = devData.patchVersion,
-  buildPrefix = devData.buildPrefix
-);
-myConfig
-```
-Which renders the template  [build-meta.jsonnet.TEMPLATE](build-meta.jsonnet.TEMPLATE)
-by calling it's constructor with the desired values to populate the template
-
-This command will render the template
-`jsonnet build-meta-myapp.jsonnet` 
-
 ## Generate a kubernetes deployment and service manifest
 
 Jsonnet Bundler allows curated Jsonnet libs to be installed from Github using a
-[jsonnetfile.json]([jsonnetfile.json]).
+[jsonnetfile.json](https://github.com/ojhughes/spring-live-jsonnet/blob/master/jsonnetfile.json).
 
 Install the k8s dependency with command `jb install`
 

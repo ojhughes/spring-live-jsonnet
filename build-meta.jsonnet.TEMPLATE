@@ -1,5 +1,3 @@
-//local newCommonData(buildNumber, commitSha) = {
-
 local newAppMetadata(
   projectName,
   commitSha,
@@ -34,10 +32,7 @@ local newAppMetadata(
       patch: 2,
       humanized: formatVersionNumber(self, $.appMeta.buildInfo.releaseNumber),
     },
-
-    artifacts: [
-      formatArtifactName(suffix)
-      for suffix in artifactSuffixes]
+    artifacts: [formatArtifactName(suffix)  for suffix in artifactSuffixes]
   }
 };
 

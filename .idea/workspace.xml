@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b6e60ab7-9126-4d09-a755-13e471a183bc" name="Default Changelist" comment="wip">
-      <change afterPath="$PROJECT_DIR$/k8s-manifest.jsonnet" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output-formats-yaml.jsonnet" afterDir="false" />
+    <list default="true" id="b6e60ab7-9126-4d09-a755-13e471a183bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-meta.jsonnet.TEMPLATE" beforeDir="false" afterPath="$PROJECT_DIR$/build-meta.jsonnet.TEMPLATE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output-formats-properties.jsonnet" beforeDir="false" afterPath="$PROJECT_DIR$/output-formats-properties.jsonnet" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -157,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584663396806</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="update readme.md">
+      <created>1584667158394</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1584667158394</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,28 +174,33 @@
     <MESSAGE value="add readme" />
     <MESSAGE value="^" />
     <MESSAGE value="wip" />
-    <option name="LAST_COMMIT_MESSAGE" value="wip" />
+    <MESSAGE value="update readme.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="update readme.md" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="804" y="222" key="CommitChangelistDialog2" timestamp="1584667000786">
+    <state x="780" y="318" key="#Plugins" timestamp="1584707808977">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state x="804" y="222" key="CommitChangelistDialog2/0.23.2560.1417@0.23.2560.1417" timestamp="1584667000786" />
-    <state width="625" height="500" key="SwitcherDM" timestamp="1584666925048">
+    <state x="780" y="318" key="#Plugins/0.23.2560.1417@0.23.2560.1417" timestamp="1584707808977" />
+    <state x="804" y="222" key="CommitChangelistDialog2" timestamp="1584708501333">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state width="625" height="500" key="SwitcherDM/0.23.2560.1417@0.23.2560.1417" timestamp="1584666925048" />
-    <state x="780" y="410" key="Vcs.Push.Dialog.v2" timestamp="1584663406798">
+    <state x="804" y="222" key="CommitChangelistDialog2/0.23.2560.1417@0.23.2560.1417" timestamp="1584708501333" />
+    <state width="625" height="500" key="SwitcherDM" timestamp="1584708293407">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state x="780" y="410" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1584663406798" />
+    <state width="625" height="500" key="SwitcherDM/0.23.2560.1417@0.23.2560.1417" timestamp="1584708293407" />
+    <state x="780" y="410" key="Vcs.Push.Dialog.v2" timestamp="1584708504467">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="780" y="410" key="Vcs.Push.Dialog.v2/0.23.2560.1417@0.23.2560.1417" timestamp="1584708504467" />
     <state x="100" y="123" width="2360" height="1217" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1584667035682">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="100" y="123" width="2360" height="1217" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.23.2560.1417@0.23.2560.1417" timestamp="1584667035682" />
-    <state x="1501" y="341" width="838" height="1032" key="search.everywhere.popup" timestamp="1584667006973">
+    <state x="1501" y="341" width="838" height="1032" key="search.everywhere.popup" timestamp="1584707800474">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state x="1501" y="341" width="838" height="1032" key="search.everywhere.popup/0.23.2560.1417@0.23.2560.1417" timestamp="1584667006973" />
+    <state x="1501" y="341" width="838" height="1032" key="search.everywhere.popup/0.23.2560.1417@0.23.2560.1417" timestamp="1584707800474" />
   </component>
 </project>
